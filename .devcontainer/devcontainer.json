@@ -20,25 +20,54 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "llvm-vs-code-extensions.vscode-clangd",                           
-        "seunlanlege.action-buttons"              
+        "llvm-vs-code-extensions.vscode-clangd",
+        "seunlanlege.action-buttons"
       ],
       "settings": {
         "clangd.arguments": [
-          "--query-driver=**/xtensa-lx106-elf-gcc",
+          "--query-driver=/home/esp8266/.espressif/tools/xtensa-lx106-elf/esp-2020r3-49-gd5524c1-8.4.0/xtensa-lx106-elf/bin/xtensa-lx106-elf-gcc",
           "--background-index",
           "--clang-tidy",
-          "--completion-style=detailed"
+          "--completion-style=detailed",
+          "--header-insertion=iwyu",
+          "--compile-commands-dir=build"
         ],
-        
         "actionButtons.commands": [
-          { "name": "$(settings-gear) Menuconfig", "command": "idf.py menuconfig", "singleInstance": true },
-          { "name": "$(wrench) Build", "command": "idf.py --ccache build", "singleInstance": true },
-          { "name": "$(info) IDF Size", "command": "idf.py size", "singleInstance": true },
-          { "name": "$(trash) Full Clean", "command": "idf.py fullclean", "singleInstance": true },
-          { "name": "$(zap) Flash", "command": "idf.py --ccache -p $ESPPORT flash", "singleInstance": true },
-          { "name": "$(close-all) Erase Flash", "command": "idf.py -p $ESPPORT erase_flash", "singleInstance": true },
-          { "name": "$(vm) Monitor", "command": "idf.py -p $ESPPORT monitor", "singleInstance": true }
+          {
+            "name": "$(settings-gear) Menuconfig",
+            "command": "idf.py menuconfig",
+            "singleInstance": true
+          },
+          {
+            "name": "$(wrench) Build",
+            "command": "idf.py --ccache build",
+            "singleInstance": true
+          },
+          {
+            "name": "$(info) IDF Size",
+            "command": "idf.py size",
+            "singleInstance": true
+          },
+          {
+            "name": "$(trash) Full Clean",
+            "command": "idf.py fullclean",
+            "singleInstance": true
+          },
+          {
+            "name": "$(zap) Flash",
+            "command": "idf.py --ccache -p $ESPPORT flash",
+            "singleInstance": true
+          },
+          {
+            "name": "$(close-all) Erase Flash",
+            "command": "idf.py -p $ESPPORT erase_flash",
+            "singleInstance": true
+          },
+          {
+            "name": "$(vm) Monitor",
+            "command": "idf.py -p $ESPPORT monitor",
+            "singleInstance": true
+          }
         ]
       }
     }
