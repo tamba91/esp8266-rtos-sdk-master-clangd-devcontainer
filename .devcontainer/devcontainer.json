@@ -1,5 +1,5 @@
 {
-  "name": "esp8266-rtos-sdk-branch-master-clangd-devcontainer",
+  "name": "esp8266-rtos-sdk-master-clangd-devcontainer",
   "build": {
     "dockerfile": "Containerfile",
     "context": "."
